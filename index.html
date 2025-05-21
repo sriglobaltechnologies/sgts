@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Global Technologies and Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-image: url('https://img.freepik.com/premium-photo/top-view-autumn-workspace-with-copying-area-laptops-office-supplies-leaves_512343-304.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(2, 10, 32, 0.8), rgba(3, 18, 43, 0.8)), url('https://www.shutterstock.com/image-vector/computer-shop-various-parts-on-600nw-569212921.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid #111827;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            min-height: 200px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: linear-gradient(to right, #1F2937, #374151);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #3B82F6;
+            color: #111827;
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+
+        .section {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(229, 231, 235, 0.9));
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid #1E3A8A;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #1F2937;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3B82F6;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .section h2:hover {
+            color: #3B82F6;
+            transform: translateY(-3px);
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .service-card {
+            flex: 1 1 300px;
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f8f9fa, #e5e7eb);
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid #1E3A8A;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to bottom, #3B82F6, #1E3A8A);
+            color: white;
+        }
+
+        .service-card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 2px solid #111827;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1F2937;
+        }
+
+        .service-card:hover h3 {
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .product-card {
+            padding: 1.5rem;
+            background: linear-gradient(to bottom, #f8f9fa, #e5e7eb);
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid #1E3A8A;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to bottom, #3B82F6, #1E3A8A);
+            color: white;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 2px solid #111827;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1F2937;
+        }
+
+        .product-card:hover h3 {
+            color: white;
+        }
+
+        .product-card .buttons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .product-card button {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+            transform: translateY(-2px);
+        }
+
+        .brands-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .brand-button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-button:hover {
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .brand-button.active {
+            background: linear-gradient(135deg, #1F2937, #374151);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-button {
+            display: none;
+            margin: 1rem auto;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(229, 231, 235, 0.9));
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid #1E3A8A;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .modal-content h2 {
+            color: #1F2937;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #3B82F6;
+            padding-bottom: 0.5rem;
+        }
+
+        .modal-content p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .modal-content input,
+        .modal-content textarea,
+        .modal-content select {
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .modal-content input:focus,
+        .modal-content textarea:focus,
+        .modal-content select:focus {
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            outline: none;
+        }
+
+        .modal-content textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .modal-content button {
+            padding: 1rem;
+            background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content button:hover {
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #1E3A8A;
+            text-align: center;
+            display: none;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: #1F2937;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #3B82F6;
+        }
+
+        #why-choose-us ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        #why-choose-us li {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        #contact .contact-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        #contact .contact-details,
+        #contact .get-quote {
+            flex: 1 1 45%;
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f8f9fa, #e5e7eb);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #1E3A8A;
+        }
+
+        #contact .contact-details h3 {
+            font-size: 1.8rem;
+            color: #1F2937;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3B82F6;
+            display: inline-block;
+        }
+
+        #contact .contact-details p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        #contact .contact-details iframe {
+            width: 100%;
+            height: 200px;
+            border: 2px solid #111827;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        #contact .get-quote h3 {
+            font-size: 1.8rem;
+            color: #1F2937;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #3B82F6;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        #contact .get-quote form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        #contact .get-quote input,
+        #contact .get-quote textarea {
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #contact .get-quote input:focus,
+        #contact .get-quote textarea:focus {
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            outline: none;
+        }
+
+        #contact .get-quote textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        #contact .get-quote button {
+            padding: 1rem;
+            background: linear-gradient(135deg, #3B82F6, #1E3A8A);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #contact .get-quote button:hover {
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background: linear-gradient(to left, #1F2937, #111827);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 4px solid #3B82F6;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid, .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #contact .contact-grid {
+                flex-direction: column;
+            }
+
+            #contact .contact-details,
+            #contact .get-quote {
+                flex: 1 1 100%;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sri Global Technologies and Services</h1>
+        <p>Your One-Stop Solution for Laptop Sales & Services</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#why-choose-us">Why Choose Us?</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="section">
+            <h2>About Us</h2>
+            <p>Established in 1997, Sri Global Technologies and Services in Bhimavaram offers 28 years of expertise in laptop solutions. We provide precision chip-level repairs, seamless system installations, and premium hardware, ensuring top-notch digital experiences.</p>
+        </section>
+
+        <section id="why-choose-us" class="section">
+            <h2>Why Choose Sri Global Technologies and Services?</h2>
+            <ul>
+                <li><strong>Decades of Trust:</strong> With over two decades in the industry, our longevity speaks volumes about our commitment to quality and customer satisfaction.</li>
+                <li><strong>Expert Technicians:</strong> Our team comprises highly skilled and experienced technicians proficient in the latest diagnostic and repair techniques.</li>
+                <li><strong>Customer-Centric Approach:</strong> We prioritize understanding your unique needs and provide tailored solutions with transparent communication and reliable support.</li>
+                <li><strong>Comprehensive Solutions:</strong> From intricate hardware repairs to seamless software installations and premium hardware sales, we offer a holistic approach to laptop care.</li>
+                <li><strong>Conveniently Located:</strong> Situated in a central area of Bhimavaram (Opposite Divya Fancy Store, Police Bomma Center), we are easily accessible for all your laptop needs.</li>
+            </ul>
+            <p>At Sri Global Technologies and Services, we are dedicated to extending the life and enhancing the performance of your laptops. Trust us to be your reliable partner in navigating the ever-evolving world of technology.</p>
+        </section>
+
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://www.mobileserviceacademy.com/wp-content/uploads/2020/02/Mobile-repair_30jan.jpg" alt="Chip Level Service">
+                    <h3>Chip Level Service</h3>
+                    <p>Expert repairs at the component level for all laptop brands.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://s3-ap-southeast-2.amazonaws.com/techau-images/wp-media-folder-techau/wp-content/uploads/2022/12/techAU_NewPCBuild2022-109.jpg" alt="System Installations">
+                    <h3>System Installations</h3>
+                    <p>Professional OS and software installations tailored to your needs.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://media.istockphoto.com/id/1348936844/photo/update-concept-software-upgrade.jpg?s=612x612&w=0&k=20&c=mtLAPwzo3nG9PNZB4RBCrnLiDDLd3lnUhxH_uU1Ue08=" alt="Software Installation">
+                    <h3>Software Installation</h3>
+                    <p>Reliable software setup and configuration services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section">
+            <h2>Our Products</h2>
+            <p>We offer a wide range of high-quality products to meet your computing needs:</p>
+            <div class="products-grid" id="products-grid">
+                <div class="product-card" data-category="laptops">
+                    <img src="https://cdn.thewirecutter.com/wp-content/media/2024/07/laptopstopicpage-2048px-3685-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp" alt="Laptops">
+                    <h3>Laptops</h3>
+                </div>
+                <div class="product-card" data-category="desktops">
+                    <img src="https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Desktops">
+                    <h3>Desktops</h3>
+                </div>
+                <div class="product-card" data-category="peripherals">
+                    <img src="https://png.pngtree.com/background/20230619/original/pngtree-a-blue-background-filled-with-computer-accessories-stationery-and-digital-tablet-picture-image_3761200.jpg" alt="Computer Peripherals">
+                    <h3>Computer Peripherals</h3>
+                </div>
+                <div class="product-card" data-category="printers">
+                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20230718/pngtree-3d-illustration-of-professional-office-equipment-multifunction-printer-and-scanner-image_3899822.jpg" alt="Printers and Scanners">
+                    <h3>Printers and Scanners</h3>
+                </div>
+                <div class="product-card" data-category="networking">
+                    <img src="https://static.vecteezy.com/system/resources/previews/053/750/083/non_2x/a-modern-wireless-router-with-external-antennas-sits-beside-a-small-network-device-photo.jpeg" alt="Networking Equipment">
+                    <h3>Networking Equipment</h3>
+                </div>
+                <div class="product-card" data-category="accessories">
+                    <img src="https://media.licdn.com/dms/image/v2/C5112AQFoyN4nfsiv8g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520077619375?e=2147483647&v=beta&t=HTSC9tEs232tK--r3srs_t6tWPRzryLzZY4o0kSX58A" alt="Hardware Accessories">
+                    <h3>Hardware Accessories</h3>
+                </div>
+            </div>
+
+            <div id="laptop-brands" class="brands-grid" style="display: none;">
+                <button class="brand-button" data-brand="lenovo">Lenovo</button>
+                <button class="brand-button" data-brand="dell">Dell</button>
+                <button class="brand-button" data-brand="hp">HP</button>
+                <button class="brand-button" data-brand="acer">Acer</button>
+                <button class="brand-button" data-brand="asus">ASUS</button>
+            </div>
+
+            <div id="desktop-brands" class="brands-grid" style="display: none;">
+                <button class="brand-button" data-brand="dell-desktop">Dell</button>
+                <button class="brand-button" data-brand="lenovo-desktop">Lenovo</button>
+                <button class="brand-button" data-brand="hp-desktop">HP</button>
+                <button class="brand-button" data-brand="asus-desktop">ASUS</button>
+                <button class="brand-button" data-brand="acer-desktop">Acer</button>
+            </div>
+
+            <button id="back-to-products" class="back-button">Back to Products</button>
+
+            <div id="lenovo-products" class="products-grid" style="display: none;"></div>
+            <div id="dell-products" class="products-grid" style="display: none;"></div>
+            <div id="hp-products" class="products-grid" style="display: none;"></div>
+            <div id="acer-products" class="products-grid" style="display: none;"></div>
+            <div id="asus-products" class="products-grid" style="display: none;"></div>
+
+            <div id="dell-desktop-products" class="products-grid" style="display: none;"></div>
+            <div id="lenovo-desktop-products" class="products-grid" style="display: none;"></div>
+            <div id="hp-desktop-products" class="products-grid" style="display: none;"></div>
+            <div id="asus-desktop-products" class="products-grid" style="display: none;"></div>
+            <div id="acer-desktop-products" class="products-grid" style="display: none;"></div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <h3>Contact Details</h3>
+                    <p>Email: saipandud@yahoo.com</p>
+                    <p>Phone: 9848142544, 9248092299</p>
+                    <p>Address: Door No 17-57-1, 1st Floor, PP Road, Bhimavaram HO, Bhimavaram - 534201 (Opposite Divya Fancy Store, Police Bomma Center)</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.305536695027!2d81.52476907487367!3d16.54354752444588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37e6e6e6e6e6e7%3A0x6e6e6e6e6e6e6e6e!2sPP%20Road%2C%20Bhimavaram%2C%20Andhra%20Pradesh%20534201%2C%20India!5e0!3m2!1sen!2sin!4v1698765432109" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="get-quote">
+                    <h3>Get Quote</h3>
+                    <form id="quote-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <textarea name="address" placeholder="Your Address" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div id="form-message" class="form-message">
+                        Thanks for your Interest!! We will Contact you for further details!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="quotation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>Get Quotation</h2>
+            <form id="quotation-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="address" placeholder="Address" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="quotation-message" class="form-message">
+                Thanks for your Interest! We will reach you soon for further details!
+            </div>
+        </div>
+    </div>
+
+    <div id="accessories-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>What's Your Requirement? Get the Quote!</h2>
+            <form id="accessories-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <select name="interest" required>
+                    <option value="" disabled selected>What's Your Requirement?</option>
+                    <option value="RAMs">RAM's</option>
+                    <option value="SSDs">SSD's</option>
+                    <option value="External Hard Disks">External Hard Disk's</option>
+                    <option value="Internal Hard Disks">Internal Hard Disk's</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="accessories-message" class="form-message">
+                Thanks for your Interest! We will reach you soon for further details!
+            </div>
+        </div>
+    </div>
+
+    <div id="specs-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2 id="specs-title"></h2>
+            <div id="specs-content"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Sri Global Technologies and Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Form submission handling for Contact section
+            document.getElementById('quote-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const message = document.getElementById('form-message');
+                message.style.display = 'block';
+                this.reset();
+                setTimeout(() => message.style.display = 'none', 5000);
+            });
+
+            // Product data
+            const lenovoProducts = [
+                { name: "Lenovo Yoga Slim 7x Gen 9", series: "Yoga", processor: "AMD Ryzen™ 9 8945HS", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "14.5-inch OLED", graphics: "Integrated AMD Radeon™ Graphics", features: "Ultra-slim, lightweight, OLED display", image: "https://p1-ofp.static.pub//fes/cms/2024/09/12/uytl79bfpuajtf6dg17f796udrwcjv870298.jpg" },
+                { name: "Lenovo ThinkPad X1 Carbon Gen 12", series: "ThinkPad", processor: "Up to Intel® Core™ Ultra 7", ram: "Up to 64GB", storage: "Up to 2TB SSD", display: "14-inch", graphics: "Integrated Intel® Graphics Plus", features: "Premium business, lightweight, durable", image: "https://p2-ofp.static.pub//fes/cms/2024/02/05/knvwg1v37fxd2bpnj5iacm73yc3ude632344.jpg" },
+                { name: "Lenovo Yoga 7i 2-in-1 (Core Ultra)", series: "Yoga", processor: "Up to Intel® Core™ Ultra 7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "14-inch Touchscreen", graphics: "Integrated Intel® Graphics", features: "2-in-1 convertible, versatile", image: "https://p1-ofp.static.pub//fes/cms/2024/06/04/ep3udl9qqhovp87vp0j38ubo6f922x729533.jpg" },
+                { name: "Lenovo Legion 5i 14th Gen (16\")", series: "Legion", processor: "Up to Intel® Core™ i9", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "16-inch", graphics: "Up to NVIDIA® GeForce RTX™ 4070", features: "High-performance gaming, high refresh rate", image: "https://p3-ofp.static.pub//fes/cms/2024/03/28/6zek5jho3g4nh0vzvdk77nqxnop625558878.png" },
+                { name: "Lenovo LOQ 14th Gen (15\")", series: "LOQ", processor: "Up to Intel® Core™ i7", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "15.6-inch", graphics: "Up to NVIDIA® GeForce RTX™ 4060", features: "Entry-level gaming, good value" , image: "https://images.fonearena.com/blog/wp-content/uploads/2024/01/Lenovo-LOQ-laptops-2024.jpg"},
+                { name: "Lenovo IdeaPad Slim 5i 13th Gen (15\")", series: "IdeaPad", processor: "Up to Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "15.6-inch", graphics: "Integrated Intel® Graphics", features: "Everyday use, slim design", image: "https://p4-ofp.static.pub//fes/cms/2023/07/18/azuke8nl1ql6pb2ggfxu84z16nasr0597118.png" },
+                { name: "Lenovo ThinkBook 16 Gen 6 (AMD)", series: "ThinkBook", processor: "Up to AMD Ryzen™ 7", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "16-inch", graphics: "Integrated AMD Radeon™ Graphics", features: "Business-oriented, larger display", image: "https://p4-ofp.static.pub//fes/cms/2023/08/14/vdwrqvgg58qs9qhe9rc7akon6afqw6634730.png" },
+                { name: "Lenovo V15 Gen 3 (15\", Intel)", series: "V Series", processor: "Up to Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 1TB SSD + HDD", display: "15.6-inch", graphics: "Integrated Intel® Graphics", features: "Essential business features, affordable", image: "https://p2-ofp.static.pub/fes/cms/2022/09/26/i6zlcap44kafmcywlh54d9rd1wieh1215035.png" },
+                { name: "Lenovo IdeaPad Gaming 3 Gen 7 (15\", AMD)", series: "IdeaPad", processor: "Up to AMD Ryzen™ 7", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "15.6-inch", graphics: "Up to NVIDIA® GeForce RTX™ 3050 Ti", features: "Affordable gaming option", image: "https://p4-ofp.static.pub/fes/cms/2023/04/27/ndhrknp7074ksgy8wr41hxnxdaswsw398707.png" },
+                { name: "Lenovo ThinkPad E16 Gen 2 (16\", Intel)", series: "ThinkPad", processor: "Up to Intel® Core™ i7", ram: "Up to 40GB", storage: "Up to 2TB SSD", display: "16-inch", graphics: "Integrated Intel® Graphics", features: "Business-focused, larger screen, robust features", image: "https://p1-ofp.static.pub//fes/cms/2024/03/07/zpuzenaiwgirevtfhwakefypg46ff5766229.jpg" },
+                { name: "Lenovo Yoga 9i Gen 9 (14\", Intel)", series: "Yoga", processor: "Up to Intel® Core™ Ultra 7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "14-inch OLED Touchscreen", graphics: "Integrated Intel® Graphics", features: "Premium 2-in-1, OLED, high-end features", image: "https://p2-ofp.static.pub//fes/cms/2024/09/19/0vdvk0j028uoljaqzn8klu7l02j5ap681019.png" },
+                { name: "Lenovo ThinkPad L14 Gen 5 (AMD)", series: "ThinkPad", processor: "Up to AMD Ryzen™ 7", ram: "Up to 64GB", storage: "Up to 2TB SSD", display: "14-inch", graphics: "Integrated AMD Radeon™ Graphics", features: "Mainstream business, durable, secure", image: "https://p1-ofp.static.pub/fes/cms/2023/03/29/by4m8kr83nenj9j2tfkfh2rybgb859738280.png" },
+                { name: "Lenovo IdeaPad Flex 5i Chromebook (14\")", series: "Chromebook", processor: "Up to Intel® Core™ i5", ram: "Up to 8GB", storage: "Up to 256GB SSD", display: "14-inch Touchscreen", graphics: "Integrated Intel® UHD Graphics", features: "Chrome OS, 2-in-1, cloud-focused" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX06Sf75VnjK1w-BKcr4NTHhyAvSHPTIPDmg&s"},
+                { name: "Lenovo Legion Pro 7i 14th Gen (16\")", series: "Legion", processor: "Up to Intel® Core™ i9", ram: "Up to 64GB", storage: "Up to 2TB SSD", display: "16-inch Mini-LED", graphics: "Up to NVIDIA® GeForce RTX™ 4090", features: "Top-tier gaming, Mini-LED display, powerful" , image: "https://p4-ofp.static.pub/fes/cms/2022/12/15/dtxip3mv36eu540ay7n0uqx96bunsc204487.png"},
+                { name: "Lenovo ThinkBook Plus Gen 5 Hybrid", series: "ThinkBook", processor: "Intel® Core™ Ultra 7 (Tablet) / AMD Ryzen™ 7 (Base)", ram: "Up to 16GB (Tablet) / Up to 32GB (Base)", storage: "Up to 1TB SSD (Tablet) / Up to 1TB SSD (Base)", display: "14-inch (Tablet & Base)", graphics: "Integrated Intel® Graphics (Tablet) / Integrated AMD Radeon™ Graphics (Base)", features: "Unique 2-in-1 with detachable tablet", image: "https://p1-ofp.static.pub//fes/cms/2024/05/29/iwncz3hftc25api7fggm3tp252dd9t932115.jpg" },
+                { name: "Lenovo IdeaPad 1 (15\", AMD)", series: "IdeaPad", processor: "Up to AMD Ryzen™ 5", ram: "Up to 16GB", storage: "Up to 1TB SSD + HDD", display: "15.6-inch", graphics: "Integrated AMD Radeon™ Graphics", features: "Entry-level, affordable, basic computing" , image: "https://m.media-amazon.com/images/I/71bDJ9wxxWL.jpg"},
+                { name: "Lenovo ThinkPad P1 Gen 7", series: "ThinkPad P", processor: "Up to Intel® Xeon® W-1675X", ram: "Up to 128GB", storage: "Up to 8TB SSD", display: "16-inch", graphics: "Up to NVIDIA RTX™ 5000 Ada Generation", features: "High-end mobile workstation, professional graphics", image: "https://p4-ofp.static.pub//fes/cms/2024/05/28/axaj7bfqk6lck8xvwfpejcm4hdiq9j708767.jpg" },
+                { name: "Lenovo Yoga Slim 6i 13th Gen (14\", Intel)", series: "Yoga", processor: "Up to Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "14-inch", graphics: "Integrated Intel® Graphics", features: "Slim, stylish, portable", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwPegfSdQr_DRc-iUiReJJssCVHasM3__2wg&s" },
+                { name: "Lenovo Chromebook Duet 5", series: "Chromebook", processor: "Qualcomm® Snapdragon™ 7c Gen 2", ram: "Up to 8GB", storage: "Up to 256GB SSD", display: "13.3-inch OLED Touchscreen", graphics: "Integrated Qualcomm® Adreno™ Graphics", features: "Chrome OS, tablet form factor with keyboard", image: "https://p2-ofp.static.pub/fes/cms/2021/09/03/zaeg54iygkukpxz3bw8kizgnk7hn7s034131.jpg" },
+                { name: "Lenovo Legion Slim 5 Gen 8 (16\", AMD)", series: "Legion", processor: "Up to AMD Ryzen™ 9", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "16-inch", graphics: "Up to NVIDIA® GeForce RTX™ 4070", features: "Slim and light gaming laptop", image: "https://p3-ofp.static.pub/fes/cms/2023/03/06/qh3e9ut456yatbfpgzzvhyyrtcr2tm743333.png" }
+            ];
+
+            const dellProducts = [
+                { name: "Dell XPS 13 (9345)", series: "XPS", processor: "Qualcomm Snapdragon X Elite", ram: "32GB", storage: "1TB SSD", display: "13.4-inch", graphics: "Qualcomm Adreno GPU", features: "Ultraportable, long battery life, premium design", image: "https://i.dell.com/sites/csimages/Video_Imagery/all/laptop-xps-13-9345-pdp-design-dynamic-thumb-sl.png" },
+                { name: "Dell XPS 16 (9640)", series: "XPS", processor: "Up to Intel Core Ultra 9", ram: "64GB", storage: "4TB SSD", display: "16.3-inch", graphics: "Up to NVIDIA RTX 4070 Laptop GPU", features: "High performance, large OLED, premium build", image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/16-9640/media-gallery/silver/touch/notebook-laptop-xps-16-9640-t-silver-gallery-5.psd" },
+                { name: "Dell XPS 14 (9440)", series: "XPS", processor: "Up to Intel Core Ultra 7", ram: "32GB", storage: "2TB SSD", display: "14.5-inch", graphics: "Up to NVIDIA RTX 4050 Laptop GPU", features: "Balance of portability and performance", image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/14-9440/media-gallery/notebook-xps-14-9440t-sl-gallery-5.psd" },
+                { name: "Dell Inspiron 15 3530", series: "Inspiron", processor: "Up to 13th Gen Intel Core i7", ram: "16GB", storage: "1TB SSD + HDD options", display: "15.6-inch", graphics: "Intel UHD / NVIDIA MX550", features: "Everyday use, various configurations, affordable", image:"https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3530-intel/media-gallery/black/notebook-inspiron-15-3530-nt-plastic-black-gallery-2.psd?fmt=pjpg&pscan=auto&scl=1&wid=4535&hei=3009&qlt=100,1&resMode=sharp2&size=4535,3009&chrss=full&imwidth=5000" },
+                { name: "Dell Inspiron 14 Plus (7440)", series: "Inspiron", processor: "Up to Intel Core Ultra 7", ram: "32GB", storage: "2TB SSD", display: "14-inch", graphics: "Intel Arc Graphics", features: "Slim, good performance, optional 2.8K display" , image: "https://m.media-amazon.com/images/I/71PI4MksFuL._AC_UF1000,1000_QL80_.jpg"},
+                { name: "Dell Latitude 7455", series: "Latitude", processor: "Qualcomm Snapdragon X Series", ram: "64GB", storage: "1TB SSD", display: "14-inch", graphics: "Qualcomm Adreno GPU", features: "Business-focused, long battery, AI features" , image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt7YFsJSJCNmPp57isPZnFb0BoGECdJqbZtg&s"},
+                { name: "Dell Latitude 5450", series: "Latitude", processor: "Up to 13th Gen Intel Core i7 U series", ram: "64GB", storage: "2TB SSD", display: "14-inch", graphics: "Intel Iris Xe Graphics", features: "Mainstream business laptop, various features" , image:"https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/latitude-14-5450-laptop/mg/notebook-latitude-14-5450t-emza-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=4575&hei=2731&qlt=100,1&resMode=sharp2&size=4575,2731&chrss=full&imwidth=5000"},
+                { name: "Dell Latitude 3440", series: "Latitude", processor: "Up to 13th Gen Intel Core i7 U series", ram: "32GB", storage: "1TB SSD", display: "14-inch", graphics: "Intel UHD / Iris Xe Graphics", features: "Entry-level business, essential features" , image:"https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/latitude-14-3440-laptop/media-gallery/notebook-latitude-14-3440-nt-uma-gray-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=3300&hei=1999&qlt=100,1&resMode=sharp2&size=3300,1999&chrss=full&imwidth=5000"},
+                { name: "Dell Alienware m18 R2", series: "Alienware", processor: "Up to 14th Gen Intel Core i9 HX", ram: "64GB", storage: "8TB SSD (dual)", display: "18-inch", graphics: "Up to NVIDIA RTX 4090 Laptop GPU", features: "High-end gaming, large display, powerful" , image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/alienware-m18-mlk/pdp/laptop-alienware-m18-mlk-pdp-mod04.psd?fmt=png-alpha&wid=5000&hei=3000"},
+                { name: "Dell Alienware x16 R2", series: "Alienware", processor: "Up to Intel Core Ultra 9", ram: "32GB", storage: "4TB SSD", display: "16-inch", graphics: "Up to NVIDIA RTX 4080 Laptop GPU", features: "Premium gaming, thin, high refresh rate" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAyz2BtxVra_Wdruiz2C2uITAT7rXPEBqiUQ&s"},
+                { name: "Dell G15 5530", series: "G Series", processor: "Up to 13th Gen Intel Core i9 HX", ram: "32GB", storage: "2TB SSD", display: "15.6-inch", graphics: "Up to NVIDIA RTX 4070 Laptop GPU", features: "Gaming-focused, performance and value" , image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/g-series/g15-5535/media-gallery/purple/1-zone-white-kb/notebook-g15-5535-nt-pp-gallery-3.psd?fmt=pjpg&pscan=auto&scl=1&wid=4436&hei=3382&qlt=100,1&resMode=sharp2&size=4436,3382&chrss=full&imwidth=5000"},
+                { name: "Dell G16 7630", series: "G Series", processor: "Up to 13th Gen Intel Core i9 HX", ram: "32GB", storage: "2TB SSD", display: "16-inch", graphics: "Up to NVIDIA RTX 4070 Laptop GPU", features: "Larger display gaming, high refresh rate" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVqR7FCOLGbqIGQ9LlW5mUDkVwaCgtlDJ4XQ&s"},
+                { name: "Dell Vostro 3530", series: "Vostro", processor: "Up to 13th Gen Intel Core i7", ram: "16GB", storage: "1TB SSD + HDD options", display: "15.6-inch", graphics: "Intel UHD Graphics / NVIDIA MX series", features: "Small business, essential features, affordable" , image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/vostro-notebooks/vostro-15-3530/media-gallery/bk-pl-fpr/notebook-vostro-15-3530-nt-plastic-fpr-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=4669&hei=2876&qlt=100,1&resMode=sharp2&size=4669,2876&chrss=full&imwidth=5000"},
+                { name: "Dell Vostro 16 5640", series: "Vostro", processor: "Up to 13th Gen Intel Core i7", ram: "32GB", storage: "1TB SSD", display: "16-inch", graphics: "Intel Iris Xe Graphics", features: "Larger display for business, productivity" , image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/vostro-notebooks/16-5640/media-gallery/fpr/laptop-vostro-16-5640-fpr-gy-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=3629&hei=2089&qlt=100,1&resMode=sharp2&size=3629,2089&chrss=full&imwidth=5000"},
+                { name: "Dell Precision 5690", series: "Precision", processor: "Up to Intel Core Ultra 9 HX", ram: "64GB", storage: "8TB SSD", display: "16-inch", graphics: "Up to NVIDIA RTX 5000 Ada Generation", features: "Mobile workstation, high-end performance" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc_TAVc7eVP_3I1Tbuuu9sz-Ghy6AXsA50Hg&s"},
+                { name: "Dell Precision 3590", series: "Precision", processor: "Up to Intel Core Ultra 7 U/H series", ram: "64GB", storage: "2TB SSD", display: "15.6-inch", graphics: "Up to NVIDIA RTX 500 Ada Generation", features: "Entry-level workstation, professional features" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYGEuOIWOkoH7kLrK11PEIbw9Gqdk_OzlTA&s"},
+                { name: "Dell Chromebook 3100", series: "Chromebook", processor: "Intel Celeron N4020/N4120", ram: "8GB", storage: "64GB eMMC", display: "11.6-inch", graphics: "Intel UHD Graphics 600", features: "Education, cloud-based, lightweight" , image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/chromebook/chromebook-11-3100/pdp/43902_chromebook_3100_pdp-r5_01.jpg?fmt=jpg"},
+                { name: "Dell Chromebook 3110 2-in-1", series: "Chromebook", processor: "Intel Celeron N4500/N5100", ram: "8GB", storage: "64GB eMMC", display: "11.6-inch", graphics: "Intel UHD Graphics", features: "Convertible, education, touch screen" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRARJu4s5sxPRRgP2FhEOjnu4hhyplMsBHxBA&s"},
+                { name: "Dell Inspiron 16 (5630)", series: "Inspiron", processor: "Up to 13th Gen Intel Core i7", ram: "32GB", storage: "2TB SSD", display: "16-inch", graphics: "Intel Iris Xe Graphics", features: "Larger display for everyday use" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdKHlopQz7YQw_UUKgE6vR8R8-Nw1gJzKHhw&s"},
+                { name: "Dell Inspiron 14 (5430)", series: "Inspiron", processor: "Up to 13th Gen Intel Core i7", ram: "16GB", storage: "1TB SSD", display: "14-inch", graphics: "Intel Iris Xe Graphics", features: "Portable, stylish, everyday computing" , image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/14-5430/media-gallery/laptop-latitude-14-5430-gray-gallery-5.psd?fmt=pjpg&pscan=auto&scl=1&wid=4243&hei=2485&qlt=100,1&resMode=sharp2&size=4243,2485&chrss=full&imwidth=5000"},
+                { name: "Dell Latitude 7640", series: "Latitude", processor: "Up to 13th Gen Intel Core i7 U series", ram: "64GB", storage: "2TB SSD", display: "16-inch", graphics: "Intel Iris Xe Graphics", features: "Premium business, large display, robust features" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIMC9iM67DEYaSTRfJ7OKI49wBL2-w0CEUng&s"},
+                { name: "Dell XPS 15 (9530)", series: "XPS", processor: "Up to 13th Gen Intel Core i9", ram: "64GB", storage: "4TB SSD", display: "15.6-inch", graphics: "Up to NVIDIA RTX 4070 Laptop GPU", features: "Powerful, creative professionals, stunning display" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3iIUP3Ec_Jh_pBg1DblZ_NhmIoCEHGGtzFw&s"}
+            ];
+
+            const hpProducts = [
+                { name: "HP Spectre x360 14 (ef)", series: "Spectre", processor: "Up to 13th Gen Intel® Core™ i7", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "13.5-inch OLED Touchscreen", graphics: "Integrated Intel® Iris® Xe Graphics", features: "Premium 2-in-1, OLED, sleek design", image: "https://jp.ext.hp.com/content/dam/jp-ext-hp-com/jp/ja/ec/notebooks/personal/spectre_x360_14_ef/images/move_top_full.webp" },
+                { name: "HP Envy x360 15 (fe)", series: "Envy", processor: "Up to 13th Gen Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "15.6-inch Touchscreen", graphics: "Integrated Intel® Iris® Xe Graphics", features: "Versatile 2-in-1, stylish", image: "https://in-media.apjonlinecdn.com/catalog/product/c/0/c08500882_evo_i7_1_1.png" },
+                { name: "HP Pavilion 14/15 (eg/fd)", series: "Pavilion", processor: "Up to 13th Gen Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 1TB SSD + HDD", display: "14-inch / 15.6-inch", graphics: "Integrated Intel® Iris® Xe Graphics / NVIDIA® MX Series", features: "Everyday use, balanced performance and features", image: "https://in-media.apjonlinecdn.com/catalog/product/c/0/c08114745_1_2.png" },
+                { name: "HP Victus 15/16 (fb/fa)", series: "Victus", processor: "Up to AMD Ryzen™ 7 / Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "15.6-inch / 16.1-inch", graphics: "Up to NVIDIA® GeForce RTX™ 4050", features: "Entry-level gaming, good value" , image: "https://in-media.apjonlinecdn.com/catalog/product/B/7/B7GP4PA-6_T1738835036.png"},
+                { name: "HP Omen 16/17 (wd/wf)", series: "Omen", processor: "Up to Intel® Core™ i9", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "16.1-inch / 17.3-inch", graphics: "Up to NVIDIA® GeForce RTX™ 4080", features: "High-performance gaming, advanced cooling" , image: "https://www.hp.com/wcsstore/hpusstore/Treatment/rc/FY24Q4-BrunoBear/OMEN-16-OMEN-Gaming-Hub.png"},
+                { name: "HP EliteBook 840 G10", series: "EliteBook", processor: "Up to 13th Gen Intel® Core™ i7 U series", ram: "Up to 64GB", storage: "Up to 2TB SSD", display: "14-inch", graphics: "Integrated Intel® Iris® Xe Graphics", features: "Premium business, lightweight, secure" , image: "https://laptopmedia.com/wp-content/uploads/2024/03/5-8.jpg"},
+                { name: "HP ProBook 440 G10", series: "ProBook", processor: "Up to 13th Gen Intel® Core™ i7 U series", ram: "Up to 32GB", storage: "Up to 1TB SSD + HDD", display: "14-inch", graphics: "Integrated Intel® Iris® Xe Graphics", features: "Mainstream business, reliable, affordable" , image: "https://kaas.hpcloud.hp.com/PROD/v2/renderbinary/10217982/7802537/com-win-nb-p-probook-440-g10-roc-14-product-specification/com-nb-probook-440-450-g10-roc-product-image"},
+                { name: "HP Spectre Folio 13", series: "Spectre", processor: "Intel® Core™ i7 (8th Gen)", ram: "Up to 16GB", storage: "Up to 2TB SSD", display: "13.3-inch Touchscreen", graphics: "Integrated Intel® UHD Graphics 620", features: "Unique leather design, 2-in-1", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-hgzYrqca44DlBpdo5g9y5CR5O3TcKVOPQ&s" },
+                { name: "HP Chromebook x360 14c", series: "Chromebook", processor: "Up to Intel® Core™ i5", ram: "Up to 8GB", storage: "Up to 256GB SSD", display: "14-inch Touchscreen", graphics: "Integrated Intel® UHD Graphics", features: "Chrome OS, 2-in-1, versatile", image: "https://lh4.googleusercontent.com/proxy/gqcsmKfQKZLDA3fJPEy2Z5bIOEmoKVca-PS6HfYYYbrJRQpzVGB8dInOQO7a6y7o4avArBKMYKMBjYayRdUtMtc8aUXvRmoWBOoa01TSJmRere6ZUIXWqpMeNBgrWnUyNoqqpS4" },
+                { name: "HP ZBook Power G10", series: "ZBook", processor: "Up to 13th Gen Intel® Core™ i9 H series", ram: "Up to 64GB", storage: "Up to 4TB SSD", display: "15.6-inch", graphics: "Up to NVIDIA RTX™ A1000 Laptop GPU", features: "Entry-level mobile workstation, professional features" , image: "https://www.hp.com/gb-en/shop/Html/Merch/Images/869Z9EA-ABU_1_500x367.jpg"},
+                { name: "HP Dragonfly G4", series: "Dragonfly", processor: "Up to 13th Gen Intel® Core™ i7 U series", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "13.5-inch Touchscreen", graphics: "Integrated Intel® Iris® Xe Graphics", features: "Ultra-light business, premium features", image: "https://www.hp.com/gb-en/shop/Html/Merch/Images/8A493EA-ABU_7_500x367.jpg" },
+                { name: "HP Essential 15 Laptop PC", series: "Essential", processor: "Up to AMD Ryzen™ 3 / Intel® Core™ i3", ram: "Up to 16GB", storage: "Up to 1TB HDD / 512GB SSD", display: "15.6-inch", graphics: "Integrated AMD Radeon™ Graphics / Intel® UHD Graphics", features: "Basic computing needs, affordable", image: "https://in-media.apjonlinecdn.com/catalog/product/c/0/c08531093.png" },
+                { name: "HP Stream 11/14", series: "Stream", processor: "Intel® Celeron® N4020/N4000", ram: "Up to 4GB", storage: "Up to 64GB eMMC", display: "11.6-inch / 14-inch", graphics: "Integrated Intel® UHD Graphics 600", features: "Very affordable, cloud-focused, lightweight", image: "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c05211060.png?imdensity=1&impolicy=Png_Res" },
+                { name: "HP Pro c640 Chromebook Enterprise", series: "Chromebook", processor: "Up to Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 256GB SSD", display: "14-inch", graphics: "Integrated Intel® UHD Graphics", features: "Chrome OS, business-focused, robust", image: "https://www.zdnet.com/a/img/resize/43bc89918f84219785aebadb1f6d49c58bb897c5/2020/11/27/3bfc7d76-59eb-4058-b179-5253133506c6/hp-pro-c640-chromebook-main.jpg?auto=webp&width=1280" },
+                { name: "HP Elite c1030 Chromebook Enterprise", series: "Chromebook", processor: "Up to Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 256GB SSD", display: "13.5-inch Touchscreen", graphics: "Integrated Intel® UHD Graphics", features: "Premium Chrome OS, business features, 2-in-1", image: "https://www.hp.com/content/dam/sites/worldwide/personal-computers/commercial/chrome_enterprise/hp-elite-c1030-chromebook/images/Mask%20Group%20331.png" },
+                { name: "HP Pavilion Aero 13", series: "Pavilion", processor: "Up to AMD Ryzen™ 7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "13.3-inch", graphics: "Integrated AMD Radeon™ Graphics", features: "Ultra-lightweight, stylish" , image: "https://ehpworld.com/wp-content/uploads/2021/10/HP-Pavilion-Aero-13-be0190AU-B.jpg"},
+                { name: "HP ZBook Studio G9", series: "ZBook", processor: "Up to 12th Gen Intel® Core™ i9 H series", ram: "Up to 64GB", storage: "Up to 4TB SSD", display: "16-inch OLED", graphics: "Up to NVIDIA RTX™ A5500 Laptop GPU", features: "High-performance mobile workstation, OLED option", image: "https://kaas.hpcloud.hp.com/PROD/v2/renderbinary/6272792/6273644/com-win-ws-p-hp-zbook-studio-g9-magneta-product-specification/com-ws-hp-zbook-studio-g9-product-image" },
+                { name: "HP ProBook x360 435 G9", series: "ProBook", processor: "Up to AMD Ryzen™ 7", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "13.3-inch Touchscreen", graphics: "Integrated AMD Radeon™ Graphics", features: "Business 2-in-1, versatile, secure", image: "https://id-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/c/0/c08143620.png" },
+                { name: "HP Chromebook 14a", series: "Chromebook", processor: "Intel® Celeron® N4500/N4020", ram: "Up to 8GB", storage: "Up to 64GB eMMC", display: "14-inch", graphics: "Integrated Intel® UHD Graphics", features: "Affordable Chrome OS laptop", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCgWT-ZfzhyKhYaxU28H5mcBZCDKQH4Dcvg&s" },
+                { name: "HP Omen Transcend 14", series: "Omen", processor: "Up to Intel® Core™ Ultra 9", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "14-inch OLED", graphics: "Up to NVIDIA® GeForce RTX™ 4070", features: "Premium thin and light gaming, OLED display", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGJw4pqtV6i5tGc_K42euoqrizzEn3wR6bOQ&s" }
+            ];
+
+            const acerProducts = [
+                { name: "Acer Swift Go 14/16 (SFG)", series: "Swift", processor: "Up to Intel® Core™ Ultra 7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "14-inch / 16-inch OLED", graphics: "Integrated Intel® Arc™ Graphics", features: "Ultra-thin, lightweight, OLED display", image: "https://rukminim3.flixcart.com/image/850/1000/xif0q/computer/y/v/a/sfg14-71-58ub-thin-and-light-laptop-acer-original-imah4f9eqra8wzgs.jpeg" },
+                { name: "Acer Swift 14 AI (SF14-61)", series: "Swift", processor: "AMD Ryzen™ 7 8840U", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "14-inch", graphics: "Integrated AMD Radeon™ Graphics", features: "AI-powered features, portable", image: "https://www.notebookcheck.net/uploads/tx_nbc2/Acer_Swift_14_AI_SF14-61__1_.jpg" },
+                { name: "Acer Predator Helios 16/18 (PH)", series: "Predator", processor: "Up to Intel® Core™ i9", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "16-inch / 18-inch", graphics: "Up to NVIDIA® GeForce RTX™ 4080", features: "High-end gaming, high refresh rate, advanced cooling", image: "https://cdn.uc.assets.prezly.com/157fb284-7b4c-4bdb-bcaf-fbabc317b639/PREDATOR-HELIOS-NEO-16-PHN16-72-02.jpg" },
+                { name: "Acer Nitro 5/16/17 (AN)", series: "Nitro", processor: "Up to Intel® Core™ i7 / AMD Ryzen™ 7", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "15.6-inch / 16-inch / 17.3-inch", graphics: "Up to NVIDIA® GeForce RTX™ 4060", features: "Mainstream gaming, good performance for price" , image: "https://laptopmedia.com/wp-content/uploads/2023/08/acer-nitro-16-an16-51-4-zone-backlit-on-wallpaper-logo-black-02.tif-custom-scaled-e1692778832361.jpg"},
+                { name: "Acer Aspire 5 (A5)", series: "Aspire", processor: "Up to Intel® Core™ i7 / AMD Ryzen™ 7", ram: "Up to 24GB", storage: "Up to 1TB SSD + HDD", display: "14-inch / 15.6-inch", graphics: "Integrated Intel® Iris® Xe Graphics / AMD Radeon™ Graphics / NVIDIA® MX Series", features: "Everyday use, various configurations, affordable" , image: "https://i.gadgets360cdn.com/large/acer_Aspire_5_acer_1685433703474.jpg" },
+                { name: "Acer Aspire 3 (A3)", series: "Aspire", processor: "Up to Intel® Core™ i5 / AMD Ryzen™ 5", ram: "Up to 16GB", storage: "Up to 1TB SSD + HDD", display: "14-inch / 15.6-inch", graphics: "Integrated Intel® UHD Graphics / AMD Radeon™ Graphics", features: "Entry-level, budget-friendly" , image: "https://www.pcworld.com/wp-content/uploads/2023/07/Acer_Aspire3-4.jpg?quality=50&strip=all"},
+                { name: "Acer Chromebook Spin 714 (CP714)", series: "Chromebook", processor: "Up to Intel® Core™ i7", ram: "Up to 16GB", storage: "Up to 512GB SSD", display: "14-inch Touchscreen", graphics: "Integrated Intel® Iris® Xe Graphics", features: "Premium Chrome OS, 2-in-1, business features" , image: "https://i.ebayimg.com/images/g/t~AAAOSwxq5mZw-B/s-l1200.jpg"},
+                { name: "Acer Chromebook Enterprise Spin 513 (CP513)", series: "Chromebook", processor: "MediaTek Kompanio 1380", ram: "Up to 8GB", storage: "Up to 256GB SSD", display: "13.5-inch Touchscreen", graphics: "Integrated ARM Mali-G7", features: "Chrome OS, lightweight, touch screen" , image: "https://cdn.uc.assets.prezly.com/197ead1a-4bed-4617-b439-5f24ef7e6cc7/Acer-Chromebook-Spin-513-CP513-1H(L)-High_01.jpg"}
+            ];
+
+            const asusProducts = [
+            { name: "ASUS Zenbook S 13 OLED (UX5304)", series: "Zenbook", processor: "Up to Intel Core Ultra 7", ram: "16GB/32GB", storage: "1TB SSD", display: "13.3-inch OLED", graphics: "Intel Iris Xe Graphics", features: "Ultra-slim, lightweight, OLED display, long battery life", image: "https://www.asus.com/media/global/SKU/90NB0WA1-M003A0/rgncbfle0zlsitbh.jpg" },
+                { name: "ASUS Zenbook 14 OLED (UX3405)", series: "Zenbook", processor: "Up to Intel Core Ultra 9", ram: "16GB/32GB", storage: "Up to 1TB SSD", display: "14-inch OLED", graphics: "Intel Iris Xe Graphics", features: "Thin and light, OLED display, good performance", image: "https://i.pcmag.com/imagery/reviews/075bmVhnXs6BUHpdXkVt9xo-1..v1708616444.jpg" },
+                { name: "ASUS Zenbook Duo (UX8406)", series: "Zenbook", processor: "Up to Intel Core Ultra 9", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "Dual 14-inch OLED", graphics: "Intel Iris Xe Graphics", features: "Innovative dual-screen design for enhanced productivity", image: "https://images.expertreviews.com/wp-content/uploads/2024/02/Asus-Zenboo-Duo-2024-1.jpg" },
+                { name: "ASUS Vivobook S 15 OLED (S5504)", series: "Vivobook", processor: "Up to Intel Core Ultra 7", ram: "8GB/16GB", storage: "Up to 1TB SSD", display: "15.6-inch OLED", graphics: "Intel Iris Xe Graphics", features: "Stylish, OLED display, good for everyday tasks", image: "https://dlcdnwebimgs.asus.com/gain/967dccac-f21d-4932-a7a2-ef84abaf9800/" },
+                { name: "ASUS Vivobook 16 (X1605)", series: "Vivobook", processor: "Up to Intel Core i7 (13th Gen)", ram: "8GB/16GB", storage: "Up to 1TB SSD", display: "16-inch IPS", graphics: "Intel Iris Xe Graphics", features: "Larger display, good for productivity" , image: "https://dlcdnwebimgs.asus.com/gain/fd792877-d63c-48e1-a0c1-52ead8391a00/" },
+                { name: "ASUS Vivobook Go 15 OLED (E1504)", series: "Vivobook Go", processor: "Up to AMD Ryzen 5", ram: "8GB/16GB", storage: "Up to 512GB SSD", display: "15.6-inch OLED", graphics: "AMD Radeon Graphics", features: "Affordable OLED laptop, good for basic tasks", image: "https://dlcdnwebimgs.asus.com/files/media/5e2878d7-7466-4222-9cb7-53e6c0e57781/v1/features/images/large/1x/s7/main.jpg" },
+                { name: "ASUS ROG Zephyrus G14 (GA403)", series: "ROG", processor: "Up to AMD Ryzen AI 9 HX", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "14-inch Nebula HDR", graphics: "Up to NVIDIA RTX 4070", features: "Powerful, thin and light gaming laptop, excellent display" , image: "https://i.ytimg.com/vi/2DDd-0BkDTg/maxresdefault.jpg"  },
+                { name: "ASUS ROG Zephyrus G16 (GU605)", series: "ROG", processor: "Up to Intel Core Ultra 9", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "16-inch Nebula HDR", graphics: "Up to NVIDIA RTX 4070", features: "Larger display gaming, thin and light" , image: "https://www.azernews.az/media/2024/02/29/1704422071559.jpg" },
+                { name: "ASUS ROG Strix SCAR 16/18 (G634/G834)", series: "ROG", processor: "Up to Intel Core i9 (14th Gen)", ram: "Up to 64GB", storage: "Up to 4TB SSD", display: "16/18-inch Nebula HDR", graphics: "Up to NVIDIA RTX 4090", features: "High-performance gaming, top-tier specs" , image: "https://cdn.eftm.com/wp-content/uploads/2023/01/A-group-photo-of-the-SCAR-16-18-displayed-in-different-positions-and-with-different-angles.--1280x720.jpg"},
+                { name: "ASUS ROG Strix G16/18 (G614/G814)", series: "ROG", processor: "Up to Intel Core i9 (13th Gen)", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "16/18-inch IPS", graphics: "Up to NVIDIA RTX 4070", features: "Powerful gaming laptops, excellent value" , image: "https://i.ytimg.com/vi/qLjtVfXG4dY/maxresdefault.jpg" },
+                { name: "ASUS TUF Gaming A15/F15 (FA/FX507)", series: "TUF Gaming", processor: "Up to AMD Ryzen 7 / Intel Core i7", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "15.6-inch IPS", graphics: "Up to NVIDIA RTX 4060", features: "Durable gaming laptops, good for mainstream gaming" , image: "https://www.asus.com/media/global/SKU/90NR0FF5-M003Y0/fl2wq2lxdjeo2lvb.png" },
+                { name: "ASUS TUF Gaming A16/F16 (FA/FX607)", series: "TUF Gaming", processor: "Up to AMD Ryzen 7 / Intel Core i7", ram: "Up to 32GB", storage: "Up to 1TB SSD", display: "16-inch IPS", graphics: "Up to NVIDIA RTX 4060", features: "Larger display durable gaming laptops" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAY0vZ0Ddd_878Zs-ArrwDwDDeH7_amGuIfw&s" },
+                { name: "ASUS Chromebook Flip CX5 (CX5500)", series: "Chromebook", processor: "Up to Intel Core i5", ram: "Up to 16GB", storage: "Up to 512GB SSD", display: "15.6-inch Touchscreen", graphics: "Intel UHD Graphics", features: "Premium Chromebook, 2-in-1 convertible" , image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFaAZG1gYlGy2uV-MbylKJw8BYzK35PgCBkQ&s"},
+                { name: "ASUS Chromebook Spin 714 (CP714)", series: "Chromebook", processor: "Up to Intel Core i7", ram: "Up to 16GB", storage: "Up to 512GB SSD", display: "14-inch Touchscreen", graphics: "Intel Iris Xe Graphics", features: "High-performance Chromebook, 2-in-1" , image: "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23464328/bfarsace_160101_5219_0008.jpg?quality=90&strip=all&crop=0,0,100,100" },
+                { name: "ASUS ExpertBook B9 OLED (B9403)", series: "ExpertBook", processor: "Up to Intel Core i7 (13th Gen)", ram: "Up to 32GB", storage: "Up to 2TB SSD", display: "14-inch OLED", graphics: "Intel Iris Xe Graphics", features: "Ultra-light business laptop, OLED display, robust features" ,image: "https://dlcdnwebimgs.asus.com/files/media/84f464cd-d248-420d-afcc-870f3cefbb9a/v2/features/images/large/1x/s1/scroll_img.jpg" },
+                { name: "ASUS ExpertBook B1 (B1402/B1502)", series: "ExpertBook", processor: "Up to Intel Core i7 (13th/12th Gen)", ram: "Up to 32GB", storage: "Up to 1TB SSD + HDD", display: "14/15.6-inch IPS", graphics: "Intel Iris Xe Graphics", features: "Reliable business laptops, various configurations" ,  image:"https://dlcdnwebimgs.asus.com/gain/f320dfe1-ebc9-4d29-9ed9-1498c68df2af/"},
+                { name: "ASUS ProArt StudioBook 16 OLED (H7604)", series: "ProArt", processor: "Up to Intel Core i9", ram: "Up to 64GB", storage: "Up to 4TB SSD", display: "16-inch OLED", graphics: "Up to NVIDIA RTX A5000", features: "High-end creator laptop, OLED display, professional graphics" , image: "https://dlcdnwebimgs.asus.com/files/media/a3a50cfb-f28c-486c-ab85-7047b3151fa3/v2/features/images/large/1x/kv.jpg"},
+                { name: "ASUS ProArt StudioBook Pro 16 OLED (W7604)", series: "ProArt", processor: "Up to Intel Xeon W-1675X", ram: "Up to 128GB", storage: "Up to 8TB SSD", display: "16-inch OLED", graphics: "Up to NVIDIA RTX A5500", features: "Professional workstation laptop, top-tier performance and graphics" , image: "https://ifdalivestorage.blob.core.windows.net/user-uploads/1007260/540636/3de972ad-1d24-4f06-9d2f-09243d18aa52/proart_studiobook_16_3d_oled_h7604_kv.jpg"},
+                { name: "ASUS Vivobook S 14 (UM3402)", series: "Vivobook S", processor: "Up to AMD Ryzen 7", ram: "Up to 16GB", storage: "Up to 1TB SSD", display: "14-inch IPS/OLED", graphics: "AMD Radeon Graphics", features: "Stylish and portable, good for everyday use" , image: "https://i.pcmag.com/imagery/reviews/04pFm7wcytBYYBoAYUYEPMD-1..v1690245019.jpg"},
+                { name: "ASUS E410/L410", series: "Everyday Use", processor: "Up to Intel Celeron/Pentium", ram: "Up to 8GB", storage: "Up to 256GB SSD", display: "14-inch IPS", graphics: "Intel UHD Graphics", features: "Very affordable and lightweight for basic computing" , image: "https://i.pcmag.com/imagery/reviews/004ukAq49TiEdBw6t311xTW-1..v1628805650.jpg"}
+            ];
+            const dellDesktopProducts = [
+                { name: "Inspiron 27 All-in-One (7730)", series: "Inspiron", processor: "Intel Core i5/i7 (13th Gen)", ram: "8GB/16GB DDR4", storage: "512GB/1TB SSD", form_factor: "All-in-One", graphics: "Intel Iris Xe Graphics", features: "Integrated webcam, speakers, suitable for everyday tasks", image: "https://www.ictechdistribution.com/images/products/IC83187CZU/7730-INS-AIO-2003-Insp-7730-AIO-Core-7-150U-16GB-1TB-SSD-NVIDIA-R-GeForce-R-MX570A-I3379I.webp" },
+                { name: "Inspiron 24 All-in-One (5430)", series: "Inspiron", processor: "Intel Core i5/i7 (13th Gen)", ram: "8GB/16GB DDR4", storage: "512GB/1TB SSD", form_factor: "All-in-One", graphics: "Intel Iris Xe Graphics", features: "Compact design, integrated features for home use", image: "https://m.media-amazon.com/images/I/613BOs4-X6L._AC_UF1000,1000_QL80_.jpg" },
+                { name: "XPS 8960 Desktop (2024)", series: "XPS", processor: "Intel Core i7/i9 (14th Gen)", ram: "16GB/32GB DDR5", storage: "1TB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA GeForce RTX 4070/4080", features: "High performance, sleek design, expandable", image: "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Dell-XPS-8960-desktop-gaming-PC-RTX-4090.jpg" },
+                { name: "Alienware Aurora R16", series: "Alienware", processor: "Intel Core i9 (14th Gen)", ram: "32GB/64GB DDR5", storage: "1TB/2TB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA GeForce RTX 4080/4090", features: "High-end gaming, distinctive design, liquid cooling options", image: "https://static.digit.in/Mustafa_News-2023-11-09T160129436.png" },
+                { name: "OptiPlex Micro Form Factor Plus (7020)", series: "OptiPlex", processor: "Intel Core i5/i7 (14th Gen)", ram: "8GB/16GB DDR5", storage: "256GB/512GB SSD", form_factor: "Small Form", graphics: "Integrated Intel Graphics / Optional Discrete", features: "Compact, business-oriented, manageability features", image: "https://images.monoprice.com/productlargeimages/468141.jpg" },
+                { name: "Vostro Desktop", series: "Vostro", processor: "Intel Core i3/i5 (Latest Gen)", ram: "8GB/16GB DDR4", storage: "256GB/512GB SSD + Optional HDD", form_factor: "Tower/SFF", graphics: "Integrated Intel Graphics / Optional Discrete", features: "Reliable for business use, various form factors available", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHJZAIWIbETRplUjvlnTTQNEiCm6rFiJfLw&s" }
+            ];
+
+            const lenovoDesktopProducts = [
+                { name: "IdeaCentre Tower Gen 9 (8L, Intel)", series: "IdeaCentre", processor: "Intel Core i5/i7 (Latest Gen)", ram: "8GB/16GB DDR4", storage: "256GB/512GB SSD + Optional HDD", form_factor: "Tower", graphics: "Integrated Intel Graphics / Entry-level Discrete", features: "Good balance of performance and value for everyday use", image: "https://p1-ofp.static.pub//fes/cms/2024/08/06/zwhiqvz7y21pekagf9vxpo7xuyq3p3798518.jpg" },
+                { name: "ThinkCentre Neo 50a Gen 5 (Intel)", series: "ThinkCentre", processor: "Intel Core i5/i7 (Latest Gen)", ram: "8GB/16GB DDR5", storage: "256GB/512GB SSD", form_factor: "All-in-One", graphics: "Integrated Intel Graphics", features: "Business-focused, security features, productivity enhancements", image: "https://p2-ofp.static.pub//fes/cms/2024/04/09/0s8vayk3gn9lsft1iwr2nxnbal3tgk663107.jpg" },
+                { name: "Legion Tower 5i Gen 10 (Intel)", series: "Legion", processor: "Intel Core i7/i9 (Latest Gen)", ram: "16GB/32GB DDR5", storage: "1TB/2TB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA GeForce RTX Series", features: "Gaming-focused, powerful performance", image: "https://p4-ofp.static.pub//fes/cms/2023/06/09/kcxygourh81kwvmzf7pzxiy9ndpt6f548751.png" },
+                { name: "ThinkCentre Neo 50t Gen 4 (Intel)", series: "ThinkCentre", processor: "Intel Core i5/i7 (Latest Gen)", ram: "8GB/16GB DDR4", storage: "256GB/512GB SSD + Optional HDD", form_factor: "Tower", graphics: "Integrated Intel Graphics / Optional Discrete", features: "Business-oriented, reliable performance", image: "https://p1-ofp.static.pub//fes/cms/2024/07/15/j46etzxohuu1gjtu37i9r5ji9aa0lt677614.jpg" },
+                { name: "IdeaCentre AIO A340 (24-inch)", series: "IdeaCentre", processor: "Intel Core i5 (8th Gen)", ram: "8GB DDR4", storage: "1TB HDD + Optional SSD", form_factor: "All-in-One", graphics: "Integrated Intel Graphics", features: "Popular for home use, integrated design", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqwzt0iJY1KW8bgsK-FIq0uEkbfuljd9sBw&s" },
+                { name: "Legion Tower 7i Gen 8", series: "Legion", processor: "Intel Core i9 (Latest Gen)", ram: "16GB/32GB DDR5", storage: "1TB/2TB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA GeForce RTX 4070/4080", features: "High-performance gaming, advanced cooling, customizable RGB lighting", image: "https://i.pcmag.com/imagery/reviews/02hQ4XTQl2pvwMEPmbc88qk-1..v1730134122.jpg" }
+            ];
+
+            const hpDesktopProducts = [
+                { name: "Envy Move", series: "Envy", processor: "Intel Core i5/i7 (Latest Gen U)", ram: "8GB/16GB LPDDR5", storage: "512GB/1TB SSD", form_factor: "Portable AIO", graphics: "Intel Iris Xe Graphics", features: "Portable design, built-in battery, carrying handle", image: "https://i.pcmag.com/imagery/reviews/05YlP2sO19U1zzXLVBIxU0H-2..v1697128910.jpg" },
+                { name: "Pavilion Tower PC", series: "Pavilion", processor: "Intel Core i5/i7 (Latest Gen)", ram: "8GB/16GB DDR4", storage: "256GB/512GB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA GeForce GTX 1650/RTX 3050", features: "Reliable for home and office, various configuration options", image: "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08077398.png?imwidth=270&imdensity=1&impolicy=Png_Res" },
+                { name: "OmniStudio X", series: "OmniStudio", processor: "Intel Core i7/i9 (Latest Gen H)", ram: "16GB/32GB DDR5", storage: "1TB/2TB SSD", form_factor: "All-in-One", graphics: "NVIDIA GeForce RTX 4070", features: "High-end AIO for creatives, powerful performance, large display", image: "https://in-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/B/0/B00XDPA-1_T1724297358.png" },
+                { name: "All-in-One 24-df0215in", series: "All-in-One", processor: "AMD Ryzen 3", ram: "8GB DDR4", storage: "1TB HDD", form_factor: "All-in-One", graphics: "AMD Radeon Graphics", features: "Popular for home use, integrated design, good value", image: "https://m.media-amazon.com/images/I/71MW1E0je-L._AC_UF1000,1000_QL80_DpWeblab_.jpg" },
+                { name: "Omen 45L Gaming Desktop (GT22 series)", series: "Omen", processor: "Intel Core i7/i9 (14th Gen)", ram: "32GB DDR5", storage: "1TB/2TB SSD", form_factor: "Tower", graphics: "NVIDIA GeForce RTX 4080/4090", features: "High-end gaming, powerful components", image: "https://in-files.apjonlinecdn.com/landingpages/npi/hp-omen-45l/rich-content/images/content-row-img-11.png" },
+                { name: "Z2 Tower G9 Workstation", series: "Z2", processor: "Intel Core i7/i9 (14th Gen)", ram: "16GB/32GB DDR5", storage: "1TB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA Quadro / Intel UHD Graphics", features: "Professional workstation, reliable performance, ISV certified", image: "https://my-files.apjonlinecdn.com/landingpages/content-pages/visid-rich-content/hp-z2-tower-g9/images/w100_product_highlight_v1.png" }
+            ];
+
+            const asusDesktopProducts = [
+                { name: "V500 Mini Tower", series: "V Series", processor: "Intel Core i5/i7 (Up to 13th Gen)", ram: "8GB/16GB DDR4", storage: "512GB/1TB SSD + Optional HDD", form_factor: "Tower", graphics: "Intel UHD Graphics / NVIDIA GeForce GT/RTX", features: "Compact tower, suitable for home and general use", image: "https://dlcdnwebimgs.asus.com/files/media/3e8d270d-b57d-41b1-9947-e99db28fb1ff/images/KV/KV_main_1380_840.jpg" },
+                { name: "S501 Small Form Factor", series: "S Series", processor: "Intel Core i5/i7 (Up to 13th Gen)", ram: "8GB/16GB DDR4", storage: "512GB/1TB SSD + Optional HDD", form_factor: "SFF", graphics: "Intel UHD Graphics / NVIDIA GeForce GT/RTX", features: "Compact design, tool-free chassis for easy upgrades", image: "https://i.gadgets360cdn.com/large/asus_v500_mini_tower_1744626119198.jpg" },
+                { name: "ROG Gaming Desktops", series: "ROG", processor: "Intel Core i7/i9 / AMD Ryzen 7/9", ram: "16GB/32GB DDR5", storage: "1TB/2TB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA GeForce RTX / AMD Radeon RX Series", features: "High-performance gaming, advanced cooling, striking aesthetics", image: "https://www.asus.com/media/Odin/Websites/global/Series/50.png" },
+                { name: "Zen AiO Series", series: "Zen AiO", processor: "Intel Core i7/i9 / AMD Ryzen 7/9", ram: "16GB/32GB DDR5", storage: "512GB/1TB SSD", form_factor: "All-in-One", graphics: "Integrated Graphics / Mid-range Discrete", features: "Stylish design, high-quality display, good for productivity and entertainment", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqbCDKYJD3uwvP-U7_N2ku6obFDfFo0wxjg&s" },
+                { name: "ExpertCenter D500SA", series: "ExpertCenter", processor: "Intel Core i5/i7 (Up to 13th Gen)", ram: "8GB/16GB DDR4", storage: "256GB/512GB SSD + Optional HDD", form_factor: "Tower", graphics: "Intel UHD Graphics / Optional Discrete", features: "Business-oriented, reliable, compact design", image: "https://i3.ytimg.com/vi/uWjnhf26xEU/maxresdefault.jpg" },
+                { name: "AiO A3 Series", series: "AiO A3", processor: "Intel Core i3/i5 (Latest Gen)", ram: "8GB/16GB DDR4/DDR5", storage: "512GB/1TB SSD", form_factor: "All-in-One", graphics: "Integrated Intel Graphics", features: "Versatile all-in-one for home and office use", image: "https://dist.contentdriver.com.au/asus/A3402WVAK-WPC156W/images/hero-mobile.webp" }
+            ];
+
+            const acerDesktopProducts = [
+                { name: "Aspire TC-1775", series: "Aspire", processor: "Intel Core i5 (Latest Gen)", ram: "8GB/16GB DDR4", storage: "512GB/1TB SSD + Optional HDD", form_factor: "Tower", graphics: "Integrated Intel Graphics / Entry-level Discrete", features: "Affordable for everyday tasks and home entertainment", image: "https://i.pcmag.com/imagery/reviews/06ithCtIIdXZqYFgQNCuQuT-3.fit_lim.size_1050x.jpg" },
+                { name: "Aspire XC-1760", series: "Aspire", processor: "AMD Ryzen 3/5/7", ram: "8GB/16GB DDR4", storage: "512GB SSD + Optional HDD", form_factor: "Tower", graphics: "Integrated AMD Radeon Graphics", features: "Good value with AMD processors, suitable for various tasks", image: "https://www.laptopsdirect.co.uk/Images/A1DT.BHWEK.002%20_3_Supersize.jpg?v=9" },
+                { name: "Veriton Business", series: "Veriton", processor: "Intel Core i5/i7 (Latest Gen)", ram: "8GB/16GB DDR4", storage: "256GB/512GB SSD + Optional HDD", form_factor: "Tower/SFF", graphics: "Integrated Intel Graphics / Basic Discrete", features: "Reliable for business use, stable platform, security features", image: "https://static-ecapac.acer.com/media/wysiwyg/Veriton_Business_Desktops_KSP3_Static-KSP-Image-Right-Left-M2.jpg" },
+                { name: "Aspire All-in-One", series: "Aspire", processor: "Intel Core i3/i5 (Latest Gen) / AMD Ryzen", ram: "8GB/16GB DDR4", storage: "512GB/1TB SSD", form_factor: "All-in-One", graphics: "Integrated Graphics", features: "Space-saving design, suitable for home and office", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg_UXX6RpXaMH5MUFxqnI_OwwaaSKnwJOe2Q&s" },
+                { name: "Predator Orion Series", series: "Predator", processor: "Intel Core i7/i9 / AMD Ryzen 7/9", ram: "16GB/32GB DDR5", storage: "1TB/2TB SSD + Optional HDD", form_factor: "Tower", graphics: "NVIDIA GeForce RTX / AMD Radeon RX Series", features: "High-performance gaming, aggressive design, advanced cooling", image: "https://cdn.uc.assets.prezly.com/344cf968-394f-4b4c-8f71-bf23beaf24b2/Predator-Orion-5000_PO5-600s_03.png" },
+                { name: "Veriton Z Series All-in-One", series: "Veriton Z", processor: "Intel Core i5/i7 (Older Gens)", ram: "8GB/16GB DDR4", storage: "1TB HDD / 256GB/512GB SSD", form_factor: "All-in-One", graphics: "Integrated Intel Graphics", features: "Business-oriented all-in-one, clean design", image: "https://us.v-cdn.net/6036147/uploads/R9BFNMAG9GJJ/acer-27s-best-all-in-one-computer.jpg" }
+            ];
+
+            // Function to create product cards
+            function createProductCard(product) {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <div class="buttons">
+                        <button class="view-specs">View Specs</button>
+                        <button class="get-quote">Get Quote</button>
+                    </div>
+                `;
+                card.querySelector('.view-specs').addEventListener('click', () => showSpecs(product));
+                card.querySelector('.get-quote').addEventListener('click', () => openQuotationModal());
+                return card;
+            }
+
+            // Function to show specifications in modal
+            function showSpecs(product) {
+                const modal = document.getElementById('specs-modal');
+                const title = document.getElementById('specs-title');
+                const content = document.getElementById('specs-content');
+                title.textContent = product.name;
+                content.innerHTML = `
+                    <p><strong>Series:</strong> ${product.series}</p>
+                    <p><strong>Processor:</strong> ${product.processor}</p>
+                    <p><strong>RAM:</strong> ${product.ram}</p>
+                    <p><strong>Storage:</strong> ${product.storage}</p>
+                    ${product.display ? `<p><strong>Display:</strong> ${product.display}</p>` : ''}
+                    ${product.form_factor ? `<p><strong>Form Factor:</strong> ${product.form_factor}</p>` : ''}
+                    <p><strong>Graphics:</strong> ${product.graphics}</p>
+                    <p><strong>Features:</strong> ${product.features}</p>
+                `;
+                modal.style.display = 'flex';
+            }
+
+            // Function to open quotation modal
+            function openQuotationModal() {
+                const modal = document.getElementById('quotation-modal');
+                modal.style.display = 'flex';
+            }
+
+            // Populate products for each brand
+            function populateProducts(brand, products, containerId) {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                products.forEach(product => {
+                    container.appendChild(createProductCard(product));
+                });
+            }
+
+            // Initialize products
+            populateProducts('lenovo', lenovoProducts, 'lenovo-products');
+            populateProducts('dell', dellProducts, 'dell-products');
+            populateProducts('hp', hpProducts, 'hp-products');
+            populateProducts('acer', acerProducts, 'acer-products');
+            populateProducts('asus', asusProducts, 'asus-products');
+            populateProducts('dell-desktop', dellDesktopProducts, 'dell-desktop-products');
+            populateProducts('lenovo-desktop', lenovoDesktopProducts, 'lenovo-desktop-products');
+            populateProducts('hp-desktop', hpDesktopProducts, 'hp-desktop-products');
+            populateProducts('asus-desktop', asusDesktopProducts, 'asus-desktop-products');
+            populateProducts('acer-desktop', acerDesktopProducts, 'acer-desktop-products');
+
+            // Category selection
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    document.getElementById('products-grid').style.display = 'none';
+                    document.getElementById('back-to-products').style.display = 'block';
+                    if (category === 'laptops') {
+                        document.getElementById('laptop-brands').style.display = 'flex';
+                        document.getElementById('desktop-brands').style.display = 'none';
+                    } else if (category === 'desktops') {
+                        document.getElementById('desktop-brands').style.display = 'flex';
+                        document.getElementById('laptop-brands').style.display = 'none';
+                    } else if (category === 'accessories') {
+                        document.getElementById('accessories-modal').style.display = 'flex';
+                    }
+                });
+            });
+
+            // Brand selection
+            document.querySelectorAll('.brand-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const brand = this.dataset.brand;
+                    document.querySelectorAll('.brand-button').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    document.querySelectorAll('.products-grid').forEach(grid => grid.style.display = 'none');
+                    document.getElementById(`${brand}-products`).style.display = 'grid';
+                    document.getElementById('laptop-brands').style.display = 'none';
+                    document.getElementById('desktop-brands').style.display = 'none';
+                });
+            });
+
+            // Back to products
+            document.getElementById('back-to-products').addEventListener('click', function() {
+                // Show main products grid
+                document.getElementById('products-grid').style.display = 'grid';
+                
+                // Hide brand grids and brand-specific product grids
+                document.getElementById('laptop-brands').style.display = 'none';
+                document.getElementById('desktop-brands').style.display = 'none';
+                document.querySelectorAll('.products-grid[id$="-products"]').forEach(grid => {
+                    grid.style.display = 'none';
+                });
+                
+                // Hide back button
+                this.style.display = 'none';
+                
+                // Remove active class from all brand buttons
+                document.querySelectorAll('.brand-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            });
+
+            // Modal close functionality
+            document.querySelectorAll('.close-modal').forEach(close => {
+                close.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                });
+            });
+
+            // Modal form submissions
+            document.getElementById('quotation-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const message = document.getElementById('quotation-message');
+                message.style.display = 'block';
+                this.reset();
+                setTimeout(() => {
+                    message.style.display = 'none';
+                    document.getElementById('quotation-modal').style.display = 'none';
+                }, 5000);
+            });
+
+            document.getElementById('accessories-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const message = document.getElementById('accessories-message');
+                message.style.display = 'block';
+                this.reset();
+                setTimeout(() => {
+                    message.style.display = 'none';
+                    document.getElementById('accessories-modal').style.display = 'none';
+                }, 5000);
+            });
+
+            // Close modals when clicking outside
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
